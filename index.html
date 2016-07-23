@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lets Click</title>
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+</head>
+<body style="background: #E0E0E0;overflow:hidden;margin:10px;z-index:-10;">
+
+<!--main container-->
+<button class="ripple" id="clickBt">
+	<!--time left-->
+	<div class="textContainer">
+		<div class="text noselect" id="timeLeft">
+			
+		</div>
+		<div class="noselect">
+			Time Left
+		</div>
+	</div>
+	<!--clicks left-->
+	<div class="textContainer">
+		<div class="text noselect" id="clickCount">
+			
+		</div>
+		<div class="noselect">
+			Clicks Left
+		</div>
+	</div>
+</button>
+
+<!--Level Info-->
+<div class="info" id="info">
+	<!--Level number-->
+	<div class="infoContainer">
+		<div class="infoText noselect" id="level">
+			
+		</div>
+		<div class="noselect">
+			Level
+		</div>
+	</div>
+	<!--Level challenge-->
+	<div id="task" class="task noselect">
+	</div>
+</div>
+<!--Level Start Button-->
+<button id="start" class="noselect">
+	START
+</button>
+
+<!--Fail container-->
+<div class="fail" id="fail">
+	<div class="failContainer">
+		<!--Fail msg-->
+		<div class="noselect">
+			OOPS !! Time Over!
+		</div>
+		<!--start over button-->
+		<button id="failBt" class="failBt noselect"> Start Over</button>
+	</div>
+</div>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+
+</body>
+</html>
