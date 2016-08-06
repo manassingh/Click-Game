@@ -40,7 +40,7 @@ var spider={
 
 	},
 	nextLevel: function(){
-		model.level++;
+		model.level=model.level+1;
 		model.clickLeft=model.firstTarget + (10*model.level);
 		model.timeLeft=15;
 		model.isStarted=false;
@@ -50,6 +50,19 @@ var spider={
 	start: function(info,startBt){
 		info.style.display='none';
 		startBt.style.display='none';
+	},
+	continue: function(fail){
+		fail.style.display='none';
+		if(model.level!=1){
+			model.clickLeft=model.firstTarget + (10*model.level);
+		}else{
+			model.clickLeft=model.firstTarget;
+		}
+		
+		model.timeLeft=15;
+		model.isStarted=false;
+		view.render();
+		view.renderInfo();
 	},
 	update: function(info,startBt,fail){
 		if(!model.isStarted){
@@ -104,6 +117,8 @@ var view={
 		this.fail=document.getElementById('fail');
 		this.failBt=document.getElementById('failBt');
 
+		this.replayLevel=document.getElementById('replayLevel');
+
 		
 		this.mainBt.addEventListener('click',function(){
 			spider.update(info,view.startBt,fail);
@@ -115,6 +130,10 @@ var view={
 
 		this.failBt.addEventListener('click', function(){
 			spider.startOver();
+		});
+
+		this.replayLevel.addEventListener('click', function(){
+			spider.continue(fail);
 		});
 
 		this.render();
